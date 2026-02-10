@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Online Physics Tuition</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="logo"></span><span>Online Physics Academy</span></a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Contact</h2>
+    <p class="lead">Send your details. I’ll reply with timings + demo slot options.</p>
+
+    <div class="grid3" style="grid-template-columns: 1.2fr 0.8fr; gap:14px">
+      <div class="card">
+        <h3>Student details</h3>
+        <p class="small">This form is “frontend only”. It won’t send automatically yet (we can add Google Form later).</p>
+        <hr class="sep" />
+
+        <form class="form" onsubmit="return showMsg(event)">
+          <input class="input" id="name" placeholder="Student name" required />
+          <input class="input" id="grade" placeholder="Class / Grade (e.g., 11 CBSE)" required />
+          <input class="input" id="goal" placeholder="Goal (Boards / Foundation / JEE/NEET basics)" required />
+          <input class="input" id="contact" placeholder="WhatsApp number / Email" required />
+          <textarea class="input" id="msg" rows="4" placeholder="Message (optional)"></textarea>
+          <button class="btn primary" type="submit">Submit</button>
+          <div class="note" id="done" style="display:none"></div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Quick info</h3>
+        <ul class="list">
+          <li>🕒 Timings: Weekdays + weekends</li>
+          <li>📍 Mode: Online (Zoom/Meet)</li>
+          <li>📚 Notes: Provided after class</li>
+          <li>✅ Demo: Free 1 session</li>
+        </ul>
+        <hr class="sep" />
+        <p class="note">Tip: Add your WhatsApp link here after deployment.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><div class="small">© Online Physics Academy</div></div>
+  </footer>
+
+  <script>
+    function showMsg(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const grade = document.getElementById("grade").value.trim();
+      const goal = document.getElementById("goal").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+
+      const out = document.getElementById("done");
+      out.style.display = "block";
+      out.textContent =
+        `Saved ✅  Name: ${name} | Grade: ${grade} | Goal: ${goal} | Contact: ${contact}. ` +
+        `Now copy these details and message on WhatsApp/Email. (We can connect Google Form next.)`;
+      return false;
+    }
+  </script>
+</body>
+</html>
