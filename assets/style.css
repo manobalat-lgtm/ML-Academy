@@ -144,9 +144,18 @@ hr.sep{border:none;border-top:1px solid rgba(38,54,95,0.6); margin:16px 0}
 }
 
 .brand-logo {
-  height: 84px;        /* adjust if needed */
+  height: 64px;        /* adjust if needed */
   width: auto;
 }
+
+
+.brand-text {
+  font-size: 22px;     /* 👈 bigger text */
+  font-weight: 700;   /* bold academic look */
+  color: #ffffff;
+  letter-spacing: 0.4px;
+}
+
 
 
 
