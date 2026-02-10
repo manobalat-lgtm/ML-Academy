@@ -135,3 +135,22 @@ a{color:inherit;text-decoration:none}
 hr.sep{border:none;border-top:1px solid rgba(38,54,95,0.6); margin:16px 0}
 .note{color:var(--muted); font-size:14px}
 
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 42px;        /* adjust if needed */
+  width: auto;
+}
+
+.brand-text {
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+
