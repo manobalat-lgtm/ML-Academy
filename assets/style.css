@@ -139,18 +139,15 @@ hr.sep{border:none;border-top:1px solid rgba(38,54,95,0.6); margin:16px 0}
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  text-decoration: none;
 }
 
 .brand-logo {
-  height: 42px;        /* adjust if needed */
+  height: 56px;        /* adjust if needed */
   width: auto;
 }
 
-.brand-text {
-  font-weight: 600;
-  font-size: 18px;
-  color: #ffffff;
-}
+
 
 
