@@ -14,7 +14,7 @@
       <nav class="menu">
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
-        <a href="pricing.html">Pricing</a>
+        <!--<a href="pricing.html">Pricing</a> -->
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -30,15 +30,16 @@
         <p class="small">This form is “frontend only”. It won’t send automatically yet (we can add Google Form later).</p>
         <hr class="sep" />
 
-        <form class="form" onsubmit="return showMsg(event)">
-          <input class="input" id="name" placeholder="Student name" required />
-          <input class="input" id="grade" placeholder="Class / Grade (e.g., 11 CBSE)" required />
-          <input class="input" id="goal" placeholder="Goal (Boards / Foundation / JEE/NEET basics)" required />
-          <input class="input" id="contact" placeholder="WhatsApp number / Email" required />
-          <textarea class="input" id="msg" rows="4" placeholder="Message (optional)"></textarea>
-          <button class="btn primary" type="submit">Submit</button>
-          <div class="note" id="done" style="display:none"></div>
-        </form>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="text" id="grade" placeholder="Class" required />
+          <input type="text" id="goal" placeholder="Goal (JEE/NEET etc)" required />
+          <input type="text" id="phone" placeholder="Phone Number" required />
+          <textarea id="message" placeholder="Message (optional)"></textarea>
+          <button type="submit" class="btn primary">Submit</button>
+
+</form>
+
       </div>
 
       <div class="card">
@@ -84,6 +85,7 @@ Message: ${msg || "-"} `;
 </script>
 </body>
 </html>
+
 
 
 
