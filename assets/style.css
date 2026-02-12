@@ -9,6 +9,7 @@
 }
 
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -16,8 +17,11 @@ body{
   color:var(--text);
   line-height:1.6;
 }
+
 a{color:inherit;text-decoration:none}
 .container{width:min(1100px, 92%); margin:0 auto;}
+
+/* ---------------- NAV ---------------- */
 .nav{
   position:sticky; top:0;
   backdrop-filter: blur(10px);
@@ -25,19 +29,42 @@ a{color:inherit;text-decoration:none}
   border-bottom:1px solid rgba(38,54,95,0.6);
   z-index:50;
 }
+
 .nav-inner{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   padding:14px 0;
+  gap: 16px;
 }
+
+/* Brand area */
 .brand{
-  display:flex; gap:10px; align-items:center;
-  font-weight:800; letter-spacing:0.2px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:800;
+  letter-spacing:0.2px;
+  min-width: 0;
 }
-.logo{
-  width:34px; height:34px; border-radius:10px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 10px 30px rgba(122,162,255,0.25);
+
+.brand-logo{
+  height: 52px;
+  width: auto;
+  display:block;
 }
+
+.brand-text{
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Menu */
 .menu{display:flex; gap:14px; flex-wrap:wrap}
 .menu a{
   padding:8px 12px;
@@ -45,16 +72,20 @@ a{color:inherit;text-decoration:none}
   border-radius:12px;
   color:var(--muted);
 }
-.menu a:hover{border-color:var(--border); color:var(--text); background:rgba(16,26,51,0.55);}
+.menu a:hover{
+  border-color:var(--border);
+  color:var(--text);
+  background:rgba(16,26,51,0.55);
+}
 
+/* ---------------- HERO ---------------- */
 .hero{
   padding:64px 0 28px;
 }
 .hero-grid{
-  display:grid; grid-template-columns: 1.2fr 0.8fr; gap:24px;
-}
-@media (max-width: 700px){
-  .form-grid{grid-template-columns:1fr}
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:24px;
 }
 .h-title{
   font-size: clamp(28px, 4vw, 44px);
@@ -62,14 +93,18 @@ a{color:inherit;text-decoration:none}
   margin:0 0 12px;
 }
 .h-sub{color:var(--muted); margin:0 0 18px}
+
 .badges{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 0}
 .badge{
-  font-size:13px; color:var(--muted);
+  font-size:13px;
+  color:var(--muted);
   border:1px solid var(--border);
   background: rgba(16,26,51,0.55);
-  padding:8px 10px; border-radius:999px;
+  padding:8px 10px;
+  border-radius:999px;
 }
 
+/* ---------------- CARDS ---------------- */
 .card{
   background: linear-gradient(145deg, #0f1f3d, #132a52);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -77,40 +112,67 @@ a{color:inherit;text-decoration:none}
   border-radius: 18px;
   padding: 24px;
 }
-.card h3{font-size: 22px;font-weight: 700;color: #ffffff;margin:0 0 6px}
-.card p{margin:0; color:var(--muted)}
-.grid3{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
-}
-@media (max-width: 860px){ .grid3{grid-template-columns:1fr} }
 
+.card h3{
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin:0 0 6px;
+}
+
+.card p{margin:0; color:var(--muted)}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+@media (max-width: 860px){
+  .grid3{grid-template-columns:1fr}
+}
+
+/* ---------------- BUTTONS ---------------- */
 .btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:10px 14px; border-radius:14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:14px;
   border:1px solid var(--border);
   background: rgba(16,26,51,0.65);
   color:var(--text);
   font-weight:650;
+  transition: 0.25s ease;
 }
+
 .btn.primary{
   background: linear-gradient(90deg, #4f9cff, #4fd1c5);
   border: none;
-  font-weight: 600;
-  padding: 10px 20px;
+  font-weight: 700;
+  padding: 10px 22px;
   border-radius: 30px;
-  transition: 0.3s ease;
-}
-.btn:hovertransform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 156, 255, 0.4);
+  transition: 0.25s ease;
 }
 
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 156, 255, 0.25);
+}
+
+/* ---------------- SECTIONS ---------------- */
 .section{padding:26px 0 46px}
 .section h2{margin:0 0 12px}
 .section .lead{color:var(--muted); margin:0 0 18px}
 
+/* ---------------- LIST ---------------- */
 .list{
-  display:grid; gap:10px; margin:0; padding:0; list-style:none;
+  display:grid;
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
 }
 .list li{
   padding:12px 12px;
@@ -119,6 +181,8 @@ a{color:inherit;text-decoration:none}
   color:var(--muted);
   background: rgba(16,26,51,0.35);
 }
+
+/* ---------------- FOOTER ---------------- */
 .footer{
   padding:26px 0;
   border-top:1px solid rgba(38,54,95,0.6);
@@ -126,6 +190,10 @@ a{color:inherit;text-decoration:none}
   background: rgba(11,18,32,0.4);
 }
 .small{font-size:13px; color:var(--muted)}
+
+/* ---------------- FORMS (general) ---------------- */
+.form{display:grid; gap:12px}
+
 .input{
   width:100%;
   padding:12px 12px;
@@ -136,69 +204,64 @@ a{color:inherit;text-decoration:none}
   outline:none;
 }
 .input:focus{border-color: rgba(122,162,255,0.9);}
-.form{display:grid; gap:12px}
+
 hr.sep{border:none;border-top:1px solid rgba(38,54,95,0.6); margin:16px 0}
 .note{color:var(--muted); font-size:14px}
 
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  text-decoration: none;
-}
-
-.brand-logo {
-  height: 64px;        /* adjust if needed */
-  width: auto;
-}
-
-
-.brand-text {
-  font-size: 44px;     /* 👈 bigger text */
-  font-weight: 700;   /* bold academic look */
-  color: #ffffff;
-  letter-spacing: 0.4px;
-}
-
-
-input, textarea {
-  background: #f4f7fb;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  padding: 10px 14px;
-  transition: 0.3s ease;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border: 2px solid #4fd1c5;
-  box-shadow: 0 0 10px rgba(79, 209, 197, 0.5);
-}
-
-
-.form-grid{
+/* ---------------- CONTACT FORM (bright, non-overlapping) ---------------- */
+/* IMPORTANT: Your form must be <form class="contact-form"> */
+.contact-form .form-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
   align-items: start;
 }
 
-.form-grid textarea{
-  grid-column: 1 / -1;     /* take full width */
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  background: #f4f7fb;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: 0.25s ease;
+  font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline: none;
+  border-color: #4fd1c5;
+  box-shadow: 0 0 10px rgba(79, 209, 197, 0.45);
+}
+
+.contact-form textarea{
+  grid-column: 1 / -1;
   min-height: 110px;
   resize: vertical;
 }
 
-.form-grid button{
-  grid-column: 1 / -1;     /* button full width */
-  justify-self: start;     /* keep it left */
+.contact-form button{
+  grid-column: 1 / -1;
+  justify-self: start;
 }
 
+/* Mobile */
+@media (max-width: 860px){
+  .hero-grid{grid-template-columns:1fr}
+}
 
-
-
-
-
-
-
+@media (max-width: 700px){
+  .nav-inner{
+    flex-wrap: wrap;
+  }
+  .brand-text{
+    font-size: 18px;
+  }
+  .brand-logo{
+    height: 44px;
+  }
+  .contact-form .form-grid{
+    grid-template-columns: 1fr;
+  }
+}
