@@ -3,18 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact | Master Of Learning Academy </title>
+  <title>Contact | Master Of Learning Academy</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
+
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html">
-        <img src="assets\images\ML-Academy Logo.png" alt="ML Academy Logo" class="brand-logo"></span><span> Master Of Learning Academy </span></a>
+        <img src="assets/images/ML-Academy-Logo.png" 
+             alt="ML Academy Logo" 
+             class="brand-logo">
+        <span class="brand-text">Master Of Learning Academy</span>
+      </a>
+
       <nav class="menu">
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
-        <!--<a href="pricing.html">Pricing</a> -->
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -25,23 +30,33 @@
     <p class="lead">Send your details. I’ll reply with timings + demo slot options.</p>
 
     <div class="grid3" style="grid-template-columns: 1.2fr 0.8fr; gap:14px">
+
+      <!-- LEFT CARD -->
       <div class="card">
         <h3>Student details</h3>
-        <p class="small">This form is “frontend only”. It won’t send automatically yet (we can add Google Form later).</p>
+        <p class="small">
+          Fill the form and click submit. It will open WhatsApp with your details.
+        </p>
         <hr class="sep" />
 
-        <form id="contactForm">
-          <input type="text" id="name" placeholder="Your Name" required />
-          <input type="text" id="grade" placeholder="Class" required />
-          <input type="text" id="goal" placeholder="Goal (JEE/NEET etc)" required />
-          <input type="text" id="phone" placeholder="Phone Number" required />
-          <textarea id="message" placeholder="Message (optional)"></textarea>
-          <button type="submit" class="btn primary">Submit</button>
+        <form id="contactForm" class="contact-form">
+          <div class="form-grid">
 
-</form>
+            <input type="text" id="name" placeholder="Your Name" required />
+            <input type="text" id="grade" placeholder="Class" required />
 
+            <input type="text" id="goal" placeholder="Goal (JEE/NEET etc)" required />
+            <input type="text" id="phone" placeholder="Phone Number" required />
+
+            <textarea id="message" placeholder="Message (optional)"></textarea>
+
+            <button type="submit" class="btn primary">Submit</button>
+
+          </div>
+        </form>
       </div>
 
+      <!-- RIGHT CARD -->
       <div class="card">
         <h3>Quick info</h3>
         <ul class="list">
@@ -50,47 +65,42 @@
           <li>📚 Notes: Provided after class</li>
           <li>✅ Demo: Free 1 session</li>
         </ul>
-        <hr class="sep" />
-        <p class="note"></p>
       </div>
+
     </div>
   </main>
 
   <footer class="footer">
-    <div class="container"><div class="small">© Master Of Learning Academy </div></div>
+    <div class="container">
+      <div class="small">© Master Of Learning Academy</div>
+    </div>
   </footer>
 
+  <!-- WHATSAPP SCRIPT -->
   <script>
-    const PHONE = "919952926623"; // <-- your WhatsApp number with country code, no + sign
+    const PHONE = "919952926623";  // Replace with your WhatsApp number (country code + number, no +)
 
-  document.querySelector("form").addEventListener("submit", function(e){
-    e.preventDefault();
-      const name = document.getElementById("name").value.trim();
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name  = document.getElementById("name").value.trim();
       const grade = document.getElementById("grade").value.trim();
-      const goal = document.getElementById("goal").value.trim();
+      const goal  = document.getElementById("goal").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const msg   = document.getElementById("message").value.trim();
 
       const text =
-`New Enquiry - STUDENT DETAILS 📚
+`New Enquiry ✅
 Name: ${name}
 Class: ${grade}
 Goal: ${goal}
 Student Contact: ${phone}
-Message: ${msg || "-"} `;
+Message: ${msg || "-"}`;
 
-    const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank");
-  });
-</script>
+      const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
