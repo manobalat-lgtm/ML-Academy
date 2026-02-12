@@ -60,22 +60,30 @@
   </footer>
 
   <script>
-    function showMsg(e){
-      e.preventDefault();
+    const PHONE = "919952926623"; // <-- your WhatsApp number with country code, no + sign
+
+  document.querySelector("form").addEventListener("submit", function(e){
+    e.preventDefault();
       const name = document.getElementById("name").value.trim();
       const grade = document.getElementById("grade").value.trim();
       const goal = document.getElementById("goal").value.trim();
-      const contact = document.getElementById("contact").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const msg   = document.getElementById("message").value.trim();
 
-      const out = document.getElementById("done");
-      out.style.display = "block";
-      out.textContent =
-        `Saved ✅  Name: ${name} | Grade: ${grade} | Goal: ${goal} | Contact: ${contact}. ` +
-        `Now copy these details and message on WhatsApp/Email. (We can connect Google Form next.)`;
-      return false;
-    }
-  </script>
+      const text =
+`New Enquiry 📚
+Name: ${name}
+Class: ${grade}
+Goal: ${goal}
+Student Contact: ${phone}
+Message: ${msg || "-"} `;
+
+    const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+  });
+</script>
 </body>
 </html>
+
 
 
